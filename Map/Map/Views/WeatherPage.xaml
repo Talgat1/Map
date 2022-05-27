@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    x:Class="Map.Views.WeatherPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+
+
+    <StackLayout>
+        <StackLayout>
+            <SearchBar
+                x:Name="searchbarcity"
+                Placeholder="Введите город"
+                SearchButtonPressed="SearchBar_SearchButtonPressed" />
+            <Label FontSize="20" Text="Информация о городе" />
+            <Image
+                x:Name="imagecloud"
+                HeightRequest="100"
+                WidthRequest="100" />
+            <Label
+                x:Name="sashaCloud"
+                FontSize="15"
+                Text="{Binding description}" />
+            <Label
+                x:Name="Temp"
+                FontSize="15"
+                Text="{Binding temp}" />
+            <Label
+                x:Name="Fells"
+                FontSize="15"
+                Text="{Binding feels_like}" />
+            <Label
+                x:Name="Wind"
+                FontSize="15"
+                Text="{Binding wind}" />
+            <Label
+                x:Name="Hum"
+                FontSize="15"
+                Text="{Binding humidity}" />
+            <Label
+                x:Name="Pressure"
+                FontSize="15"
+                Text="{Binding pressure}" />
+        </StackLayout>
+        <StackLayout>
+            <maps:Map
+                x:Name="MyMap"
+                HeightRequest="400"
+                IsShowingUser="True" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
